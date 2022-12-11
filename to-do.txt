@@ -1,0 +1,9 @@
+# makemigrations and migrate
+
+# сделать правильно медиа
+https://docs.djangoproject.com/en/4.1/topics/files/
+https://stackoverflow.com/questions/34563454/django-imagefield-upload-to-path
+
+# сделать пароли MD5
+https://pythonguides.com/encrypt-and-decrypt-password-in-django/
+https://docs.djangoproject.com/en/4.1/topics/auth/passwords/
