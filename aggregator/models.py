@@ -3,15 +3,17 @@ from django.contrib.auth.models import User
 from aggregator.categories import CATEGORIES, SUBCATEGORIES
 
 # Create your models here.
-class User(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    middle_name = models.CharField(max_length=30, null=True)
-    username = models.CharField(max_length=30)
-    password = models.CharField(max_length=32)
-    date_of_birth = models.DateField()
-    phone_number = models.CharField(max_length=50)
-    email = models.CharField(max_length=50)
+class UserProfile(models.Model):
+    # All commented fields are already in Default Django User Model
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    middle_name = models.CharField(max_length=30, null=True, blank=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    phone_number = models.CharField(max_length=50, null=True, blank=True)
+    #first_name = models.CharField(max_length=30)
+    #last_name = models.CharField(max_length=30)    
+    #username = models.CharField(max_length=30)
+    #password = models.CharField(max_length=32)
+    #email = models.CharField(max_length=50)    
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
